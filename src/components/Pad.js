@@ -1,7 +1,7 @@
 import React from "react";
 import {bank1} from "./App"
 
-function Pad({handleClick, power, backgroundStyle, element, id }) {
+function Pad({handleClick, power, element, id }) {
     const backgroundStyle = power ? "orange" : "gray";
     return (
       <button 
