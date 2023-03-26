@@ -3,7 +3,7 @@ import Pad from "./Pad";
 import {bank1} from "./App"
 
 
-function Pads() {
+function Pads({power, volume}) {
     const keypadCode = Object.keys(bank1);
 
 
@@ -13,7 +13,7 @@ function Pads() {
         audio.currentTime = 0;
         audio.play();
         document.getElementById("display").innerText = bank1[e.target.innerText].name;
-    }
+    };
 
 
     return (
@@ -21,15 +21,15 @@ function Pads() {
         {keypadCode.map((pad, idx) => {
           return (
             <Pad
-              id={pad+idx}
-              key={pad+idx}
+              id={pad + idx}
+              key={pad + idx}
               handleClick={playSound}
               element={pad}
              power = {power}
             />
           );
         })}
-        <div id='display'> Play a Sound </div>  
+        <div id='display'>Play a Sound!</div>  
       </div>
     );
   }
