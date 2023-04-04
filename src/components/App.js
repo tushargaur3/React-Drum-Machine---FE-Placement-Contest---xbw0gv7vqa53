@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/App.css"
 import Pads from "./Pads";
 
-
 export const bank1 = {
   Q: {
     name: "Heater 1",
@@ -42,9 +41,8 @@ export const bank1 = {
   },
 };
 
-
 function ControlScreen({ power, togglePower, volume, setVolume}) {
-  const handlepowerToggle = () => {
+  const handlePowerToggle = () => {
     togglePower(!power);
     setVolume(1);
   };
@@ -78,7 +76,7 @@ function ControlScreen({ power, togglePower, volume, setVolume}) {
            disabled={!power}
         />
         <span id="volume-display">
-          Volume : {Math.round(volume * 100)}% 
+          Volume: {Math.round(volume * 100)}% 
         </span>
       </label>
     </div>
@@ -89,13 +87,12 @@ function App() {
   const [power, setPower] = useState(false);
   const [volume, setVolume] = useState(1);
   
-  const togglePower = {value} => {
+  const togglePower = (value) => {
     setPower(value);
   };
   
   return (
     <div id="drum-machine">
-      
       <Pads power={power} volume={volume}/>
       <ControlScreen 
         power={power}
