@@ -2,25 +2,24 @@ import React from "react";
 import {bank1} from "./App"
 
 function Pad({ handleClick, power, element, id }) {
-    const backgroundStyle = power ? "orange" : "gray";
+    const backgroundStyle = power ? 'orange' : 'gray'
     return (
       <button 
         data-tag={id}
-        type="button"
-        className="drum-pad"
+        type='button'
+        className='drum-pad'
         onClick={handleClick} 
-        id={bank1[element].name} 
+        id={bank1[element]} 
         disabled={!power} 
-        style={{ background: `${backgroundStyle}` }}
-      >
+        style={{ background: `${backgroundStyle}` }}>
         {element}
         <audio 
           id={element} 
           src={bank1[element].source} 
-          className="clip">
+          className='clip'>
         </audio>
-      </button>
-    );
-  }
+     </button>
+   );
+}
   
-  export default Pad ; 
+export default Pad; 
