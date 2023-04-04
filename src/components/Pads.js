@@ -1,6 +1,6 @@
 import React from "react";
 import Pad from "./Pad";
-import {bank1} from "./App"
+import { bank1 } from "./App"
 
 function Pads({ power, volume }) {
     const keypadCode = Object.keys(bank1);
@@ -10,11 +10,11 @@ function Pads({ power, volume }) {
         audio.volume = volume;
         audio.currentTime = 0;
         audio.play();
-        document.getElementById("display").innerText = bank1[e.target.innerText].name;
-    };
+        document.getElementById("display").innerText = bank1[e.target.innerText].name
+    }
 
     return (
-      <div id="div-pads">
+      <div id='div-pads'>
         {keypadCode.map((pad, idx) => {
           return (
             <Pad
@@ -26,7 +26,7 @@ function Pads({ power, volume }) {
             />
           );
         })}
-        <div id="display">Play a Sound!</div>  
+        <div id='display'>Play a Sound!</div>  
       </div>
     );
   }
