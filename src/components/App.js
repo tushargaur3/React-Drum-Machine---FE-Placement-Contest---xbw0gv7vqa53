@@ -41,7 +41,7 @@ export const bank1 = {
   },
 };
 
-function ControlScreen({ power, togglePower, volume, setVolume}) {
+function ControlScreen({ power, togglePower, volume, setVolume }) {
   const handlePowerToggle = () => {
     togglePower(!power);
     setVolume(1);
@@ -61,7 +61,7 @@ function ControlScreen({ power, togglePower, volume, setVolume}) {
               onChange={handlePowerToggle}
         />
         <span className="checkmark">
-          {power ? "Power ON" : "Power OFF" 
+          {power ? "Power ON" : "Power OFF"}
         </span>
       </label>
       <label id="label-volume">
